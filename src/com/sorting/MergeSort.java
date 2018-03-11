@@ -8,9 +8,10 @@ public class MergeSort {
 		Integer[] array = new Integer[] { 7, 4, 1, 2, 9, 8, 3, 5, 6 };
 		Integer[] sorted = new Integer[array.length];
 
-		System.out.print("Initial Array -");
+		System.out.print("Initial Array - ");
 		printArray(array);
 
+		// Call the mergeSort() method to sort the Integer array
 		sorted = mergeSort(array, 0, array.length - 1);
 
 		for (int index = 0; index < sorted.length; index++) {
@@ -21,7 +22,6 @@ public class MergeSort {
 
 	private static Integer[] mergeSort(Integer[] array, int left, int right) {
 		// TODO Auto-generated method stub
-
 		if (left < right) {
 			int mid = (left + right) / 2;
 			mergeSort(array, left, mid);
@@ -30,12 +30,10 @@ public class MergeSort {
 			merge(array, left, mid, right);
 		}
 		return array;
-
 	}
 
-	private static void merge(Integer arr[], int left, int mid, int right) {
+	private static void merge(Integer array[], int left, int mid, int right) {
 		// TODO Auto-generated method stub
-
 		int n1 = mid - left + 1;
 		int n2 = right - mid;
 
@@ -43,46 +41,43 @@ public class MergeSort {
 		int rList[] = new int[n2];
 
 		for (int i = 0; i < n1; ++i)
-			lList[i] = arr[left + i];
+			lList[i] = array[left + i];
 		for (int j = 0; j < n2; ++j)
-			rList[j] = arr[mid + 1 + j];
+			rList[j] = array[mid + 1 + j];
 
 		int i = 0, j = 0;
 
 		int k = left;
 		while (i < n1 && j < n2) {
 			if (lList[i] <= rList[j]) {
-				arr[k] = lList[i];
+				array[k] = lList[i];
 				i++;
 			} else {
-				arr[k] = rList[j];
+				array[k] = rList[j];
 				j++;
 			}
 			k++;
 		}
 
 		while (i < n1) {
-			arr[k] = lList[i];
+			array[k] = lList[i];
 			i++;
 			k++;
 		}
 
 		while (j < n2) {
-			arr[k] = rList[j];
+			array[k] = rList[j];
 			j++;
 			k++;
 		}
-
 	}
 
-	private static void printArray(Integer[] arr) {
+	private static void printArray(Integer[] array) {
 		// TODO Auto-generated method stub
-
-		for (int i = 0; i < arr.length; ++i) {
-			System.out.print(arr[i] + " ");
+		for (int i = 0; i < array.length; ++i) {
+			System.out.print(array[i] + " ");
 		}
 		System.out.println();
-
 	}
 
 }
