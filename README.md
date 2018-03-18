@@ -5,3 +5,7 @@
 1. Bubble Sort
 2. Merge Sort
 3. Quick Sort
+
+# Common DAA Algorithms
+
+1. Dijkstra's Algorithm
